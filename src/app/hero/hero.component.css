@@ -1,0 +1,33 @@
+.hero-container {
+    height: 60vh; /* Hauteur responsive */
+    min-height: 200px;
+    position: relative;
+  }
+  
+  /* Style pour l'image */
+  img.rounded-3xl {
+    border-radius: 1.5rem; /* Arrondi des bords */
+  }
+  
+  /* Style pour les boutons de navigation */
+  .bg-white {
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Style pour le texte */
+  .text-5xl {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  /* Ajustements pour les écrans mobiles */
+  @media (max-width: 768px) {
+    .hero-container {
+      height: 70vh;
+      min-height: 400px;
+    }
+  
+    .text-5xl {
+      font-size: 2.5rem;
+    }
+  }
