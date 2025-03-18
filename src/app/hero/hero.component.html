@@ -1,40 +1,133 @@
 <div class="rounded-3xl overflow-hidden relative hero-container">
-    <!-- Images -->
-    <div 
-      *ngFor="let image of images; let i = index"
-      class="absolute inset-0 transition-opacity duration-500 ease-in-out"
-      [ngClass]="{'opacity-100': i === currentIndex, 'opacity-0': i !== currentIndex}">
-        
-      <!-- Conteneur de l'image avec padding et bord arrondi -->
-      <div class="h-full px-20"> <!-- Padding de 1rem (16px) -->
-        <img [src]="image" class="w-full h-full object-cover rounded-3xl" alt="Image"> <!-- Bord arrondi -->
-      </div>
-        
-      <div class="absolute inset-0 flex items-center justify-center pt-20">
-        <div class="text-center text-white">
-          <h1 class="text-5xl font-bold mb-4">We Create Amazing<br>Designs</h1>
-        </div>
-      </div>
+  <!-- Images -->
+  <div
+    *ngFor="let image of images; let i = index"
+    class="absolute inset-0 transition-opacity duration-500 ease-in-out"
+    [ngClass]="{
+      'opacity-100': i === currentIndex,
+      'opacity-0': i !== currentIndex
+    }"
+  >
+    <!-- Conteneur de l'image avec padding et bord arrondi -->
+    <div class="h-full px-32">
+      <!-- Padding de 1rem (16px) -->
+      <img
+        [src]="image"
+        class="w-full h-full object-cover rounded-3xl"
+        alt="Image"
+      />
+      <!-- Bord arrondi -->
     </div>
-  
-    <!-- Boutons de navigation -->
-    <button 
-      class="absolute inset-y-1/2 left-4 w-10 h-10 flex items-center justify-center bg-[#8E7E6A] bg-opacity-75 rounded-full cursor-pointer z-10 hover:bg-opacity-100"
-      (click)="prevSlide()">
-      <span class="text-white">❮</span>
-    </button>
-    <button 
-      class="absolute inset-y-1/2 right-4 w-10 h-10 flex items-center justify-center bg-[#8E7E6A] bg-opacity-75 rounded-full cursor-pointer z-10 hover:bg-opacity-100"
-      (click)="nextSlide()">
-      <span class="text-white">❯</span>
-    </button>
-  
-    <!-- Indicateurs -->
-    <div class="absolute bottom-8 left-0 right-0 flex justify-center space-x-3">
-      <div *ngFor="let img of images; let i = index"
-           class="w-3 h-3 rounded-full bg-white transition-all duration-300 cursor-pointer"
-           [ngClass]="{'opacity-100': i === currentIndex, 'opacity-50': i !== currentIndex}"
-           (click)="goToSlide(i)">
+
+    <div class="absolute inset-0 flex items-center justify-center pt-20">
+      <div class="text-center text-white">
+        <h1 class="text-5xl font-bold mb-4">We Create Amazing<br />Designs</h1>
       </div>
     </div>
   </div>
+
+  <!-- Boutons de navigation -->
+  <button
+    class="absolute inset-y-1/2 left-4 w-10 h-10 flex items-center justify-center bg-[#8E7E6A] bg-opacity-75 rounded-full cursor-pointer z-10 hover:bg-opacity-100"
+    (click)="prevSlide()"
+  >
+    <span class="text-white">❮</span>
+  </button>
+  <button
+    class="absolute inset-y-1/2 right-4 w-10 h-10 flex items-center justify-center bg-[#8E7E6A] bg-opacity-75 rounded-full cursor-pointer z-10 hover:bg-opacity-100"
+    (click)="nextSlide()"
+  >
+    <span class="text-white">❯</span>
+  </button>
+
+  <!-- Indicateurs -->
+  <div class="absolute bottom-8 left-0 right-0 flex justify-center space-x-3">
+    <div
+      *ngFor="let img of images; let i = index"
+      class="w-3 h-3 rounded-full bg-white transition-all duration-300 cursor-pointer"
+      [ngClass]="{
+        'opacity-100': i === currentIndex,
+        'opacity-50': i !== currentIndex
+      }"
+      (click)="goToSlide(i)"
+    ></div>
+  </div>
+</div>
+
+<div class="px-32 mt-10">
+  <div class="px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+      <h2 class="text-2xl font-bold mb-4">
+        We are creative Interior and architech - Design company
+      </h2>
+    </div>
+    <div>
+      <p class="text-gray-500">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Qisque lectus sit
+        amet est placerat. Fuet nullam non est ut amet. Hac habitasse platea
+        dictumst vestibulum feugiat nibh sed pulvinar proin gravida.
+      </p>
+    </div>
+  </div>
+
+  <div class="px-12 pb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="relative">
+      <img
+        src="/assets/pexels-cottonbro-5989947.jpg"
+        class="w-[70%] rounded-lg shadow-md"
+        alt="Modern lounge area"
+      />
+      <div
+        class="absolute bottom-0 right-0 transform translate-x-1/2 translate"
+      >
+        <img
+          src="/assets/pexels-slipcoverkas-27515150.jpg"
+          class="w-[45%] h-auto rounded-lg shadow-lg border-4 border-white"
+          alt="Mobile design"
+        />
+      </div>
+    </div>
+    <div>
+      <div class="grid grid-cols-2 gap-6">
+        <div
+          class="flex flex-col items-center p-4 border border-gray-200 rounded-lg"
+        >
+          <div class="p-4 rounded-full bg-gray-100 mb-2">
+            <svg width="64px" height="64px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a,.b{fill:none;stroke:#a79a9a;stroke-linecap:round;stroke-linejoin:round;}.a{isolation:isolate;}</style></defs><polyline class="a" points="29.46 38.63 43.5 38.63 43.5 32.04 24 9.38 4.5 31.96"></polyline><polyline class="a" points="24 9.38 24 38.63 29.46 38.63"></polyline><polygon class="a" points="26.42 17.57 29.43 20.96 29.43 24.55 26.41 21.14 26.42 17.57"></polygon><polygon class="a" points="31.47 23.46 34.48 26.86 34.48 30.44 31.46 27.03 31.47 23.46"></polygon><polygon class="a" points="26.52 24.71 29.52 28.1 29.52 31.69 26.5 28.28 26.52 24.71"></polygon><polygon class="a" points="36.41 29.23 39.41 32.62 39.41 36.21 36.39 32.8 36.41 29.23"></polygon><polygon class="a" points="31.49 30.47 34.49 33.86 34.49 37.44 31.47 34.03 31.49 30.47"></polygon><path class="b" d="M21.41,17.57,18.4,21v3.59l3-3.41Z"></path><path class="b" d="M16.36,23.46l-3,3.39v3.59l3-3.41Z"></path><path class="b" d="M11.43,29.23l-3,3.39v3.59l3-3.41Z"></path><path class="b" d="M21.32,24.71l-3,3.39v3.59l3-3.41Z"></path><path class="b" d="M16.35,30.47l-3,3.39v3.58l3-3.41Z"></path><path class="b" d="M21.38,31.65l-3,3.39v3.59l3-3.42Z"></path><polygon class="a" points="26.52 31.65 29.52 35.04 29.52 38.62 26.5 35.21 26.52 31.65"></polygon></g></svg>
+          </div>
+          <span class="text-center font-medium">3D Space Designing</span>
+        </div>
+        <div
+          class="flex flex-col items-center p-4 border border-gray-200 rounded-lg"
+        >
+          <div class="p-4 rounded-full bg-gray-100 mb-2">
+            <svg width="64px" height="64px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#a79a9a;stroke-linecap:round;stroke-linejoin:round;}</style></defs><polygon class="a" points="40.887 14.25 24 4.5 7.113 14.25 7.113 33.75 24 43.5 40.887 33.75 40.887 14.25"></polygon><polyline class="a" points="7.113 14.25 24 24 40.887 14.25"></polyline><line class="a" x1="24" y1="43.5" x2="24" y2="24"></line><polygon class="a" points="31.12 11.668 31.12 28.111 16.88 36.332 16.88 19.889 31.12 11.668"></polygon></g></svg>
+          </div>
+          <span class="text-center font-medium">Architectural Drawing</span>
+        </div>
+        <div
+          class="flex flex-col items-center p-4 border border-gray-200 rounded-lg"
+        >
+          <div class="p-4 rounded-full bg-gray-100 mb-2">
+            <svg width="64px" height="64px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#a79a9a;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="a" d="M25.5785,36.1424c-.041-4.7889,1.0624-8.7464,7.0814-8.4979C41.246,5.7628,6.2359,6.5969,15.5681,27.5138c2.83-.1756,7.5212,1.5092,6.72,9.1465"></path><path class="a" d="M42.5,33.479l-37,5.8236"></path><path class="a" d="M5.5,11.04l12.3448,2.29"></path><path class="a" d="M32.3554,15.53,42.5,17.0114"></path></g></svg>
+          </div>
+          <span class="text-center font-medium">3D Model building</span>
+        </div>
+        <div
+          class="flex flex-col items-center p-4 border border-gray-200 rounded-lg"
+        >
+          <div class="p-4 rounded-full bg-gray-100 mb-2">
+            <svg width="64px" height="64px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#a79a9a;stroke-linecap:round;stroke-linejoin:round;}</style></defs><rect class="a" x="5.5" y="5.5" width="15.8571" height="15.8571"></rect><rect class="a" x="27.5004" y="6.3575" width="14.1421" height="14.1421" transform="translate(0.6303 28.3788) rotate(-45)"></rect><rect class="a" x="5.5" y="26.6429" width="15.8571" height="15.8571"></rect><rect class="a" x="26.6429" y="26.6429" width="15.8571" height="15.8571"></rect></g></svg>
+          </div>
+          <span class="text-center font-medium">Building The Space</span>
+        </div>
+      </div>
+
+      <ul class="mt-8 space-y-2 text-gray-500">
+        <li>• Lorem ipsum dolor sit amet consectetur adipiscing</li>
+        <li>• Sed do eiusmod tempor incididunt ut labore et dolore</li>
+      </ul>
+    </div>
+  </div>
+</div>
