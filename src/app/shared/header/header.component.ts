@@ -14,15 +14,14 @@ export class HeaderComponent {
   user: any = null;
   userRole: string = '';
   isMenuOpen = false;
+  menuOpen = false;
+
 
   constructor(
     private router: Router,
 
   ) {}
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
 
   ngOnInit(): void {
     // this.authService.isLoggedIn().subscribe((status) => {
@@ -35,7 +34,9 @@ export class HeaderComponent {
     //   }
     // });
   }
-
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 
 }
 

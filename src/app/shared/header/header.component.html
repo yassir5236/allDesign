@@ -1,16 +1,50 @@
-<nav class="w-full px-8 py-6 flex justify-between items-center mb-10">
+<nav class="w-full px-8 py-4 flex justify-between items-center mb-10 bg-white shadow-md"
+>
   <div class="font-bold text-2xl flex items-center gap-4">
-    <svg fill="#df8507" height="50px" width="50px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 472.645 472.645" xml:space="preserve" stroke="#df8507"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M472.538,27.009c-0.394-4.923-3.938-9.058-8.665-10.24C373.387-6.764,327.208,40.793,307.811,71.119 c-10.338,16.246-14.08,34.166-10.732,51.201c-8.566-0.887-17.92,0.393-28.16,4.134c-10.281,3.775-21.745,10.164-34.375,18.988 l82.145,82.143c8.822-12.63,15.212-24.094,18.987-34.375c3.151-8.665,4.628-16.737,4.529-24.221 c4.529,1.18,9.157,1.968,13.883,1.968c2.659,0,5.415-0.197,8.074-0.591c51.594-7.779,59.766-66.758,60.062-69.318 c5.12-39.876,32.394-56.91,43.914-62.423C470.47,36.461,473.03,31.932,472.538,27.009z"></path> </g> </g> <g> <g> <path d="M450.679,344.35l-90.092-89.994l-46.139,46.139l-31.652-31.645c8.178-8.894,15.529-17.368,21.935-25.376L218.656,157.4 c-8.007,6.405-16.481,13.755-25.372,21.932L84.304,70.351V37.544c0-3.446-1.772-6.695-4.726-8.468L33.399,1.409 c-3.84-2.363-8.862-1.674-12.012,1.476L2.876,21.299c-3.151,3.248-3.742,8.171-1.477,12.11l27.668,46.08 c1.871,2.954,5.022,4.825,8.468,4.825H70.42l108.581,108.581c-2.508,2.445-4.979,4.82-7.559,7.406 C117.387,254.356-28.336,422.332,5.731,456.399c3.151,3.249,7.68,5.809,15.065,5.809c15.065,0,42.043-10.535,94.917-47.951 c47.655-33.772,103.68-81.132,146.117-123.57c2.585-2.578,4.958-5.048,7.403-7.553l31.291,31.284l-46.177,46.177l90.092,89.993 c14.178,14.179,32.985,22.055,53.071,22.055c20.086,0,38.892-7.876,53.169-22.055C479.922,421.346,479.922,373.692,450.679,344.35 z M361.443,375.342l-13.922-13.923l13.922-13.922l13.923,13.922L361.443,375.342z M396.251,410.159l-13.923-13.932l13.933-13.923 l13.922,13.932L396.251,410.159z"></path> </g> </g> </g></svg>
-    <span>All Design</span> </div>
-  <div class="hidden md:flex space-x-8">
-    <a routerLink="" class="hover:text-gray-500">Acceuil</a>
-    <a routerLink="about" class="hover:text-gray-500">À propos</a>
-    <a routerLink="services" class="hover:text-gray-500">Services</a>
-    <a routerLink="/devis" class="hover:text-gray-500">Devis</a>
-
-
+    <svg fill="#df8507" height="50px" width="50px" viewBox="0 0 472.645 472.645" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path d="M472.538,27.009c-0.394-4.923-3.938-9.058-8.665-10.24C373.387-6.764,327.208,40.793,307.811,71.119 c-10.338,16.246-14.08,34.166-10.732,51.201c-8.566-0.887-17.92,0.393-28.16,4.134c-10.281,3.775-21.745,10.164-34.375,18.988 
+        l82.145,82.143c8.822-12.63,15.212-24.094,18.987-34.375c3.151-8.665,4.628-16.737,4.529-24.221 c4.529,1.18,9.157,1.968,13.883,1.968c2.659,0,5.415-0.197,8.074-0.591c51.594-7.779,59.766-66.758,60.062-69.318 
+        c5.12-39.876,32.394-56.91,43.914-62.423C470.47,36.461,473.03,31.932,472.538,27.009z"></path>
+      </g>
+    </svg>
+    <span>All Design</span>
   </div>
-  <button class="bg-[#8e7e6a] text-white px-6 py-2 rounded-full hover:bg-[#7a6c5c]">
+
+  <div class="hidden md:flex space-x-8 text">
+    <a routerLink="" class="hover:text-gray-600 transition-colors">Accueil</a>
+    <a routerLink="about" class="hover:text-gray-600 transition-colors">À propos</a>
+    <a routerLink="services" class="hover:text-gray-600 transition-colors">Services</a>
+    <a routerLink="/devis" class="hover:text-gray-600 transition-colors">Devis</a>
+  </div>
+
+  <button class="hidden md:flex bg-[#8e7e6a] text-white px-4 py-2 text-sm sm:text-base md:px-4 md:py-1  rounded-full hover:bg-[#7a6c5c] transition-all">
     Présentation
   </button>
+  
+
+  <!-- Mobile Menu Button -->
+  <button class="md:hidden flex items-center text-gray-700" (click)="toggleMenu()">
+    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
+
+  <!-- Mobile Menu -->
+  <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-6 text-white
+    text-xl transition-all duration-300 ease-in-out transform z-100" [class.hidden]="!menuOpen">
+    <button class="absolute top-5 right-5 text-white" (click)="toggleMenu()">
+      ✖
+    </button>
+    <a routerLink="" class="hover:text-gray-300" (click)="toggleMenu()">Accueil</a>
+    <a routerLink="about" class="hover:text-gray-300" (click)="toggleMenu()">À propos</a>
+    <a routerLink="services" class="hover:text-gray-300" (click)="toggleMenu()">Services</a>
+    <a routerLink="/devis" class="hover:text-gray-300" (click)="toggleMenu()">Devis</a>
+    <button class="bg-[#8e7e6a] text-white px-6 py-2 rounded-full hover:bg-[#7a6c5c] transition-all">
+      Présentation
+    </button>
+  </div>
 </nav>
