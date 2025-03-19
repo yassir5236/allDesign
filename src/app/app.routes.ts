@@ -6,7 +6,7 @@ export const routes: Routes = [
     pathMatch: 'full',
     loadComponent: () =>
       import('./hero/hero.component').then((m) => m.HeroComponent),
-    data: { animation: 'HomePage' },
+    data: { animation: 'homePage' },
   },
   {
     path: 'devis',
@@ -14,6 +14,24 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./devis/devis.component').then((m) => m.DevisComponent),
 
-    data: { animation: 'RegisterPage' },
+    data: { animation: 'registerPage' },
+  },
+
+  {
+    path: 'about',
+    pathMatch: 'full',
+    loadComponent: () =>
+      import('./about/about.component').then((m) => m.AboutComponent),
+
+    data: { animation: 'about' },
+  },
+
+  {
+    path: 'services',
+    pathMatch: 'full',
+    loadComponent: () =>
+      import('./services/services.component').then((m) => m.ServicesComponent),
+
+    data: { animation: 'service' },
   },
 ];
