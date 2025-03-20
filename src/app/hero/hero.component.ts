@@ -20,9 +20,9 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 })
 export class HeroComponent {
   images: string[] = [
+    '/assets/pexels-wilcle-nunes-38713774-26987997.jpg',
     '/assets/pexels-pixabay-271795.jpg',
     '/assets/pexels-subham-majumder-1992868-3614082.jpg',
-    '/assets/pexels-wilcle-nunes-38713774-26987997.jpg'
   ];
   
   currentIndex: number = 0;
