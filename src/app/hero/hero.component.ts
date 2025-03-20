@@ -1,14 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-hero',
-//   imports: [],
-//   templateUrl: './hero.component.html',
-//   styleUrl: './hero.component.css'
-// })
-// export class HeroComponent {
-
-// }
 import { CommonModule } from '@angular/common';
 import { Component, ChangeDetectorRef } from '@angular/core';
 
@@ -29,21 +18,18 @@ export class HeroComponent {
 
   constructor(private cdr: ChangeDetectorRef) {}
 
-  // Aller à l'image suivante
   nextSlide(): void {
     this.currentIndex = (this.currentIndex + 1) % this.images.length;
-    this.cdr.detectChanges(); // Force la mise à jour de la vue
+    this.cdr.detectChanges(); 
   }
 
-  // Aller à l'image précédente
   prevSlide(): void {
     this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-    this.cdr.detectChanges(); // Force la mise à jour de la vue
+    this.cdr.detectChanges(); 
   }
 
-  // Aller à une image spécifique
   goToSlide(index: number): void {
     this.currentIndex = index;
-    this.cdr.detectChanges(); // Force la mise à jour de la vue
+    this.cdr.detectChanges(); 
   }
 }
