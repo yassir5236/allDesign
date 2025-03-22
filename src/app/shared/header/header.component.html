@@ -1,26 +1,45 @@
-<nav class="w-full px-8 py-4 flex justify-between items-center mb-10 bg-white shadow-md"
+<nav
+  class="w-full px-8 py-4 flex justify-between items-center mb-10 bg-white shadow-md"
 >
-  <div class="font text-2xl flex items-center gap-4">
-    <img src="assets/logo allDesign.png" height="60" width="60">
-    <span class=" text-[13px] md:text-2xl">All Design</span>
-  </div>
-
+  <a href="">
+    <div class="font text-2xl flex items-center gap-4">
+      <img src="assets/logo allDesign.png" height="60" width="60" />
+    </div>
+  </a>
   <div class="hidden md:flex space-x-8 text">
     <a routerLink="" class="hover:text-gray-600 transition-colors">Accueil</a>
-    <a routerLink="about" class="hover:text-gray-600 transition-colors">À propos</a>
-    <a routerLink="services" class="hover:text-gray-600 transition-colors">Services</a>
-    <a routerLink="/devis" class="hover:text-gray-600 transition-colors">Devis</a>
+    <a routerLink="about" class="hover:text-gray-600 transition-colors"
+      >À propos</a
+    >
+    <a routerLink="services" class="hover:text-gray-600 transition-colors"
+      >Services</a
+    >
+    <a routerLink="/devis" class="hover:text-gray-600 transition-colors"
+      >Contactez-Nous</a
+    >
   </div>
 
-  <button class="hidden md:flex bg-[#8e7e6a] text-white px-4 py-2 text-sm sm:text-base md:px-4 md:py-1  rounded-full hover:bg-[#7a6c5c] transition-all">
-    Présentation
+  <button routerLink="/devis"
+    class="hidden md:flex bg-[#8e7e6a] text-white px-4 py-2 text-sm sm:text-base md:px-4 md:py-1 rounded-full hover:bg-[#7a6c5c] transition-all"
+  >
+    Demander un devis 
   </button>
-  
 
   <!-- Mobile Menu Button -->
-  <button class="md:hidden flex items-center text-gray-700" (click)="toggleMenu()">
-    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+  <button
+    class="md:hidden flex items-center text-gray-700"
+    (click)="toggleMenu()"
+  >
+    <svg
+      class="w-8 h-8"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
       <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -28,16 +47,28 @@
   </button>
 
   <!-- Mobile Menu -->
-  <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-6 text-white
-    text-xl transition-all duration-300 ease-in-out transform z-100" [class.hidden]="!menuOpen">
+  <div
+    class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-6 text-white text-xl transition-all duration-300 ease-in-out transform z-100"
+    [class.hidden]="!menuOpen"
+  >
     <button class="absolute top-5 right-5 text-white" (click)="toggleMenu()">
       ✖
     </button>
-    <a routerLink="" class="hover:text-gray-300" (click)="toggleMenu()">Accueil</a>
-    <a routerLink="about" class="hover:text-gray-300" (click)="toggleMenu()">À propos</a>
-    <a routerLink="services" class="hover:text-gray-300" (click)="toggleMenu()">Services</a>
-    <a routerLink="/devis" class="hover:text-gray-300" (click)="toggleMenu()">Devis</a>
-    <button class="bg-[#8e7e6a] text-white px-6 py-2 rounded-full hover:bg-[#7a6c5c] transition-all">
+    <a routerLink="" class="hover:text-gray-300" (click)="toggleMenu()"
+      >Accueil</a
+    >
+    <a routerLink="about" class="hover:text-gray-300" (click)="toggleMenu()"
+      >À propos</a
+    >
+    <a routerLink="services" class="hover:text-gray-300" (click)="toggleMenu()"
+      >Services</a
+    >
+    <a routerLink="/devis" class="hover:text-gray-300" (click)="toggleMenu()"
+      >Devis</a
+    >
+    <button
+      class="bg-[#8e7e6a] text-white px-6 py-2 rounded-full hover:bg-[#7a6c5c] transition-all"
+    >
       Présentation
     </button>
   </div>
