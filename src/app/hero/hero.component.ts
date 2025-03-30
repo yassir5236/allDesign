@@ -9,9 +9,10 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 })
 export class HeroComponent {
   images: string[] = [
-    '/assets/pexels-wilcle-nunes-38713774-26987997.jpg',
     'assets/pexels-emrecan-2079246.jpg',
-    'assets/pexels-home-decor-interiors-634144-1827054.jpg',
+    '/assets/pexels-wilcle-nunes-38713774-26987997.jpg',
+
+  'assets/pexels-home-decor-interiors-634144-1827054.jpg',
  
   ];
   
