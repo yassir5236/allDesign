@@ -24,7 +24,7 @@
           </h1>
           <p class="text-lg sm:text-xl mb-6">
           </p>
-          <button class="bg-[#8E7E6A] hover:bg-[#7A6D5C] text-white font-bold py-3 px-6 rounded-full transition duration-300">
+          <button routerLink="/devis" class="bg-[#8E7E6A] hover:bg-[#7A6D5C] text-white font-bold my-10 py-3 px-6 rounded-full transition duration-300">
             Obtenez votre devis gratuit →
           </button>
         </div>
@@ -346,65 +346,66 @@
 
 
 
-  <!-- Hero Slider Section -->
-  <div class="relative flex items-center justify-center w-full min-h-screen ">
-    <!-- Image de fond -->
-    <div class="w-[70%]">
-      <img src="/assets/pexels-cottonbro-5989947.jpg" 
-           class="w-full h-auto rounded-3xl object-cover" 
-           alt="Nos Services" />
-    </div>
-  
-    <!-- Contenu par-dessus l'image -->
-    <div class="absolute inset-0 flex items-center justify-center">
-      <div class="text-center text-white max-w-4xl mx-auto px-4">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
-          Des Solutions Clé en Main, de la Conception à la Livraison
-        </h1>
-  
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Service 1 -->
-          <div class="bg-white/10 backdrop-blur-xl p-6 rounded-lg border border-white/20">
-            <h3 class="text-xl font-semibold mb-2">Cuisines Haut de Gamme</h3>
-            <p class="text-sm sm:text-base">
-              Matériaux italiens, plans ergonomiques, intégration d'électroménager intelligent.
-            </p>
-          </div>
-  
-          <!-- Service 2 -->
-          <div class="bg-white/10 backdrop-blur-xl p-6 rounded-lg border border-white/20">
-            <h3 class="text-xl font-semibold mb-2">Aménagement Commercial</h3>
-            <p class="text-sm sm:text-base">
-              Optimisation des espaces de vente (magasins, showrooms, bureaux) pour maximiser le flux clients.
-            </p>
-          </div>
-  
-          <!-- Service 3 -->
-          <div class="bg-white/10 backdrop-blur-xl p-6 rounded-lg border border-white/20">
-            <h3 class="text-xl font-semibold mb-2">Rénovation Complète</h3>
-            <p class="text-sm sm:text-base">
-              De la démolition à la décoration finale, suivi de chantier transparent.
-            </p>
-          </div>
-  
-          <!-- Service 4 -->
-          <div class="bg-white/10 backdrop-blur-xl p-6 rounded-lg border border-white/20">
-            <h3 class="text-xl font-semibold mb-2">Design 3D Immersif</h3>
-            <p class="text-sm sm:text-base">
-              Visualisez votre projet en réalité virtuelle avant même le premier coup de marteau.
-            </p>
-          </div>
+<!-- Hero Slider Section -->
+<div class="relative flex items-center justify-center w-full min-h-screen px-4">
+  <!-- Image Container -->
+  <div class="w-full md:w-[80%] relative ">
+    <img src="/assets/pexels-cottonbro-5989947.jpg" 
+         class="hidden md:flex w-full md:h-[70%] rounded-3xl object-cover" 
+         alt="Nos Services" />
+  </div>
+
+  <!-- Overlay Content -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="text-center text-white max-w-4xl mx-auto p-6 md:p-10 bg-black/30 md:bg-transparent rounded-lg">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+        Des Solutions Clé en Main, de la Conception à la Livraison
+      </h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Service 1 -->
+        <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">Cuisines Haut de Gamme</h3>
+          <p class="text-sm md:text-base">
+            Matériaux italiens, plans ergonomiques, intégration d'électroménager intelligent.
+          </p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">Aménagement Commercial</h3>
+          <p class="text-sm md:text-base">
+            Optimisation des espaces de vente (magasins, showrooms, bureaux) pour maximiser le flux clients.
+          </p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">Rénovation Complète</h3>
+          <p class="text-sm md:text-base">
+            De la démolition à la décoration finale, suivi de chantier transparent.
+          </p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
+          <h3 class="text-lg md:text-xl font-semibold mb-2">Design 3D Immersif</h3>
+          <p class="text-sm md:text-base">
+            Visualisez votre projet en réalité virtuelle avant même le premier coup de marteau.
+          </p>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
+
+
 
 <!-- Stats Section -->
 <div class="py-16 bg-[#8E7E6A] text-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold sm:text-4xl">
+      <h2 class="text-xl font-bold md:text-3xl">
         ALL DESIGN en Chiffres
       </h2>
     </div>
@@ -412,19 +413,19 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Stat 1 -->
       <div class="text-center">
-        <div class="text-5xl font-bold mb-2">14 000</div>
+        <div class="text-4xl font-bold mb-2">14 000</div>
         <div class="text-xl">heures de travail annuelles</div>
       </div>
 
       <!-- Stat 2 -->
       <div class="text-center">
-        <div class="text-5xl font-bold mb-2">85%</div>
+        <div class="text-4xl font-bold mb-2">85%</div>
         <div class="text-xl">de matériaux sourcés au Maroc</div>
       </div>
 
       <!-- Stat 3 -->
       <div class="text-center">
-        <div class="text-5xl font-bold mb-2">4.9/5</div>
+        <div class="text-4xl font-bold mb-2">4.9/5</div>
         <div class="text-xl">sur Google (142 avis)</div>
       </div>
     </div>
@@ -445,7 +446,7 @@
         Contactez-nous dès aujourd'hui pour une consultation gratuite et un accès à notre galerie 3D exclusive !
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <button class="bg-[#8E7E6A] hover:bg-[#7A6D5C] text-white font-bold py-3 px-8 rounded-full transition duration-300">
+        <button routerLink="/devis"class="bg-[#8E7E6A] hover:bg-[#7A6D5C] text-white font-bold py-3 px-8 rounded-full transition duration-300">
           Obtenez votre devis gratuit
         </button>
         <button class="border-2 border-[#8E7E6A] text-[#8E7E6A] hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition duration-300">
