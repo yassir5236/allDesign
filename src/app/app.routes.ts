@@ -34,4 +34,13 @@ export const routes: Routes = [
 
     data: { animation: 'service' },
   },
+
+  {
+    path: 'demande',
+    pathMatch: 'full',
+    loadComponent: () =>
+      import('./demande/demande.component').then((m) => m.DemandeComponent),
+
+    data: { animation: 'demande' },
+  },
 ];
