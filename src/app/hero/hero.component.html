@@ -1,397 +1,421 @@
-<div class="rounded-3xl overflow-hidden relative hero-container ">
+<div class="rounded-3xl overflow-hidden relative hero-container">
+  <div
+    *ngFor="let image of images; let i = index"
+    class="absolute inset-0 transition-opacity duration-500 ease-in-out"
+    [ngClass]="{
+      'opacity-100': i === currentIndex,
+      'opacity-0': i !== currentIndex
+    }"
+  >
+    <div class="h-full px-4 sm:px-8 md:px-16">
+      <img
+        [src]="image"
+        class="w-full h-full object-cover rounded-3xl"
+        alt="Image"
+      />
+    </div>
+
     <div
-      *ngFor="let image of images; let i = index"
-      class="absolute inset-0 transition-opacity duration-500 ease-in-out"
+      class="absolute inset-0 flex items-center justify-center pt-10 sm:pt-20"
+    >
+      <div class="text-center text-white">
+        <h1 class="text-3xl sm:text-4xl md:text-4xl font-bold mb-4">
+          ALL DESIGN • L'Art de l'Aménagement<br />
+          au Maroc depuis 2014
+        </h1>
+        <p class="text-lg sm:text-xl mb-6"></p>
+        <button
+          routerLink="/devis"
+          class="bg-[#8E7E6A] hover:bg-[#7A6D5C] text-white font-bold my-10 py-3 px-6 rounded-full transition duration-300"
+        >
+          Obtenez votre devis gratuit →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <button
+    class="absolute inset-y-1/2 left-2 sm:left-4 w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center bg-[#8E7E6A] bg-opacity-75 rounded-full cursor-pointer z-10 hover:bg-opacity-100"
+    (click)="prevSlide()"
+  >
+    <span class="text-white text-lg">❮</span>
+  </button>
+  <button
+    class="absolute inset-y-1/2 right-2 sm:right-4 w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center bg-[#8E7E6A] bg-opacity-75 rounded-full cursor-pointer z-10 hover:bg-opacity-100"
+    (click)="nextSlide()"
+  >
+    <span class="text-white text-lg">❯</span>
+  </button>
+
+  <div
+    class="absolute bottom-4 sm:bottom-8 left-0 right-0 flex justify-center space-x-2 sm:space-x-3"
+  >
+    <div
+      *ngFor="let img of images; let i = index"
+      class="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-white transition-all duration-300 cursor-pointer"
       [ngClass]="{
         'opacity-100': i === currentIndex,
-        'opacity-0': i !== currentIndex
+        'opacity-50': i !== currentIndex
       }"
-    >
-      <div class="h-full px-4 sm:px-8 md:px-16">
-        <img
-          [src]="image"
-          class="w-full h-full object-cover rounded-3xl"
-          alt="Image"
-        />
-      </div>
-  
+      (click)="goToSlide(i)"
+    ></div>
+  </div>
+</div>
+
+<div class="container mx-auto px-4 sm:px-8 md:px-16 mt-10 mb-20">
+  <div
+    class="px-4 text-gray-500 text-center sm:px-8 py-8 grid grid-cols-1 md:text-centre gap-8 md:text-md"
+  >
+    "Cuisines sur mesure • Agencement de villas • Design commercial •
+    Visualisation 3D : Libérez le potentiel de vos espaces avec des experts
+    locaux."
+  </div>
+
+  <div class="px-4 sm:px-8 pb-8 grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+    <div class="relative flex justify-center mb-10">
+      <img
+        src="/assets/pexels-cottonbro-5989947.jpg"
+        class="w-[90%] sm:w-[70%] rounded-lg shadow-md"
+        alt="Modern lounge area"
+      />
       <div
-        class="absolute inset-0 flex items-center justify-center pt-10 sm:pt-20"
+        class="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2"
       >
-        <div class="text-center text-white">
-          <h1 class="text-3xl sm:text-4xl md:text-4xl font-bold mb-4">
-            ALL DESIGN • L'Art de l'Aménagement<br /> au Maroc depuis 2014
-          </h1>
-          <p class="text-lg sm:text-xl mb-6">
-          </p>
-          <button routerLink="/devis" class="bg-[#8E7E6A] hover:bg-[#7A6D5C] text-white font-bold my-10 py-3 px-6 rounded-full transition duration-300">
-            Obtenez votre devis gratuit →
-          </button>
-        </div>
-      </div>
-    </div>
-  
-    <button
-      class="absolute inset-y-1/2 left-2 sm:left-4 w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center bg-[#8E7E6A] bg-opacity-75 rounded-full cursor-pointer z-10 hover:bg-opacity-100"
-      (click)="prevSlide()"
-    >
-      <span class="text-white text-lg">❮</span>
-    </button>
-    <button
-      class="absolute inset-y-1/2 right-2 sm:right-4 w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center bg-[#8E7E6A] bg-opacity-75 rounded-full cursor-pointer z-10 hover:bg-opacity-100"
-      (click)="nextSlide()"
-    >
-      <span class="text-white text-lg">❯</span>
-    </button>
-  
-    <div
-      class="absolute bottom-4 sm:bottom-8 left-0 right-0 flex justify-center space-x-2 sm:space-x-3"
-    >
-      <div
-        *ngFor="let img of images; let i = index"
-        class="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-white transition-all duration-300 cursor-pointer"
-        [ngClass]="{
-          'opacity-100': i === currentIndex,
-          'opacity-50': i !== currentIndex
-        }"
-        (click)="goToSlide(i)"
-      ></div>
-    </div>
-  </div>
-  
-  <div class="container mx-auto px-4 sm:px-8 md:px-16 mt-10 mb-20">
-    <div
-      class="px-4 text-gray-500 text-center sm:px-8 py-8 grid grid-cols-1 md:text-centre gap-8 md:text-md"
-    >
-          "Cuisines sur mesure • Agencement de villas • Design commercial • Visualisation 3D : Libérez le potentiel de vos espaces avec des experts locaux."
-      
-    </div>
-  
-    <div class="px-4 sm:px-8 pb-8 grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-      <div class="relative flex justify-center mb-10">
         <img
-          src="/assets/pexels-cottonbro-5989947.jpg"
-          class="w-[90%] sm:w-[70%] rounded-lg shadow-md"
-          alt="Modern lounge area"
+          src="/assets/pexels-slipcoverkas-27515150.jpg"
+          class="w-[40%] sm:w-[45%] h-auto rounded-lg shadow-lg border-4 border-white"
+          alt="Mobile design"
         />
-        <div
-          class="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2"
-        >
-          <img
-            src="/assets/pexels-slipcoverkas-27515150.jpg"
-            class="w-[40%] sm:w-[45%] h-auto rounded-lg shadow-lg border-4 border-white"
-            alt="Mobile design"
-          />
-        </div>
       </div>
-  
-      <div class="grid grid-cols-2 gap-6">
-        <div
-          class="flex flex-col items-center p-4 border border-gray-200 rounded-lg"
-        >
-          <div class="p-4 rounded-full bg-gray-100 mb-2">
-            <svg
-              width="64px"
-              height="64px"
-              viewBox="0 0 48 48"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="#000000"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <defs>
-                  <style>
-                    .a,
-                    .b {
-                      fill: none;
-                      stroke: #a79a9a;
-                      stroke-linecap: round;
-                      stroke-linejoin: round;
-                    }
-                    .a {
-                      isolation: isolate;
-                    }
-                  </style>
-                </defs>
-                <polyline
-                  class="a"
-                  points="29.46 38.63 43.5 38.63 43.5 32.04 24 9.38 4.5 31.96"
-                ></polyline>
-                <polyline
-                  class="a"
-                  points="24 9.38 24 38.63 29.46 38.63"
-                ></polyline>
-                <polygon
-                  class="a"
-                  points="26.42 17.57 29.43 20.96 29.43 24.55 26.41 21.14 26.42 17.57"
-                ></polygon>
-                <polygon
-                  class="a"
-                  points="31.47 23.46 34.48 26.86 34.48 30.44 31.46 27.03 31.47 23.46"
-                ></polygon>
-                <polygon
-                  class="a"
-                  points="26.52 24.71 29.52 28.1 29.52 31.69 26.5 28.28 26.52 24.71"
-                ></polygon>
-                <polygon
-                  class="a"
-                  points="36.41 29.23 39.41 32.62 39.41 36.21 36.39 32.8 36.41 29.23"
-                ></polygon>
-                <polygon
-                  class="a"
-                  points="31.49 30.47 34.49 33.86 34.49 37.44 31.47 34.03 31.49 30.47"
-                ></polygon>
-                <path class="b" d="M21.41,17.57,18.4,21v3.59l3-3.41Z"></path>
-                <path class="b" d="M16.36,23.46l-3,3.39v3.59l3-3.41Z"></path>
-                <path class="b" d="M11.43,29.23l-3,3.39v3.59l3-3.41Z"></path>
-                <path class="b" d="M21.32,24.71l-3,3.39v3.59l3-3.41Z"></path>
-                <path class="b" d="M16.35,30.47l-3,3.39v3.58l3-3.41Z"></path>
-                <path class="b" d="M21.38,31.65l-3,3.39v3.59l3-3.42Z"></path>
-                <polygon
-                  class="a"
-                  points="26.52 31.65 29.52 35.04 29.52 38.62 26.5 35.21 26.52 31.65"
-                ></polygon>
-              </g>
-            </svg>
-          </div>
-          <span class="text-center font-medium text-sm sm:text-base"
-            >Visualisation 3D</span
+    </div>
+
+    <div class="grid grid-cols-2 gap-6">
+      <div
+        class="flex flex-col items-center p-4 border border-gray-200 rounded-lg"
+      >
+        <div class="p-4 rounded-full bg-gray-100 mb-2">
+          <svg
+            width="64px"
+            height="64px"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#000000"
           >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <defs>
+                <style>
+                  .a,
+                  .b {
+                    fill: none;
+                    stroke: #a79a9a;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                  }
+                  .a {
+                    isolation: isolate;
+                  }
+                </style>
+              </defs>
+              <polyline
+                class="a"
+                points="29.46 38.63 43.5 38.63 43.5 32.04 24 9.38 4.5 31.96"
+              ></polyline>
+              <polyline
+                class="a"
+                points="24 9.38 24 38.63 29.46 38.63"
+              ></polyline>
+              <polygon
+                class="a"
+                points="26.42 17.57 29.43 20.96 29.43 24.55 26.41 21.14 26.42 17.57"
+              ></polygon>
+              <polygon
+                class="a"
+                points="31.47 23.46 34.48 26.86 34.48 30.44 31.46 27.03 31.47 23.46"
+              ></polygon>
+              <polygon
+                class="a"
+                points="26.52 24.71 29.52 28.1 29.52 31.69 26.5 28.28 26.52 24.71"
+              ></polygon>
+              <polygon
+                class="a"
+                points="36.41 29.23 39.41 32.62 39.41 36.21 36.39 32.8 36.41 29.23"
+              ></polygon>
+              <polygon
+                class="a"
+                points="31.49 30.47 34.49 33.86 34.49 37.44 31.47 34.03 31.49 30.47"
+              ></polygon>
+              <path class="b" d="M21.41,17.57,18.4,21v3.59l3-3.41Z"></path>
+              <path class="b" d="M16.36,23.46l-3,3.39v3.59l3-3.41Z"></path>
+              <path class="b" d="M11.43,29.23l-3,3.39v3.59l3-3.41Z"></path>
+              <path class="b" d="M21.32,24.71l-3,3.39v3.59l3-3.41Z"></path>
+              <path class="b" d="M16.35,30.47l-3,3.39v3.58l3-3.41Z"></path>
+              <path class="b" d="M21.38,31.65l-3,3.39v3.59l3-3.42Z"></path>
+              <polygon
+                class="a"
+                points="26.52 31.65 29.52 35.04 29.52 38.62 26.5 35.21 26.52 31.65"
+              ></polygon>
+            </g>
+          </svg>
         </div>
-  
-        <div
-          class="flex flex-col items-center p-4 border border-gray-200 rounded-lg"
+        <span class="text-center font-medium text-sm sm:text-base"
+          >Visualisation 3D</span
         >
-          <div class="p-4 rounded-full bg-gray-100 mb-2">
-            <svg
-              width="64px"
-              height="64px"
-              viewBox="0 0 48 48"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="#000000"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <defs>
-                  <style>
-                    .a {
-                      fill: none;
-                      stroke: #a79a9a;
-                      stroke-linecap: round;
-                      stroke-linejoin: round;
-                    }
-                  </style>
-                </defs>
-                <path
-                  class="a"
-                  d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"
-                ></path>
-                <path
-                  class="a"
-                  d="M25.5785,36.1424c-.041-4.7889,1.0624-8.7464,7.0814-8.4979C41.246,5.7628,6.2359,6.5969,15.5681,27.5138c2.83-.1756,7.5212,1.5092,6.72,9.1465"
-                ></path>
-                <path class="a" d="M42.5,33.479l-37,5.8236"></path>
-                <path class="a" d="M5.5,11.04l12.3448,2.29"></path>
-                <path class="a" d="M32.3554,15.53,42.5,17.0114"></path>
-              </g>
-            </svg>
-          </div>
-          <span class="text-center font-medium text-sm sm:text-base"
-            >Cuisines sur mesure</span
+      </div>
+
+      <div
+        class="flex flex-col items-center p-4 border border-gray-200 rounded-lg"
+      >
+        <div class="p-4 rounded-full bg-gray-100 mb-2">
+          <svg
+            width="64px"
+            height="64px"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#000000"
           >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <defs>
+                <style>
+                  .a {
+                    fill: none;
+                    stroke: #a79a9a;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                  }
+                </style>
+              </defs>
+              <path
+                class="a"
+                d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"
+              ></path>
+              <path
+                class="a"
+                d="M25.5785,36.1424c-.041-4.7889,1.0624-8.7464,7.0814-8.4979C41.246,5.7628,6.2359,6.5969,15.5681,27.5138c2.83-.1756,7.5212,1.5092,6.72,9.1465"
+              ></path>
+              <path class="a" d="M42.5,33.479l-37,5.8236"></path>
+              <path class="a" d="M5.5,11.04l12.3448,2.29"></path>
+              <path class="a" d="M32.3554,15.53,42.5,17.0114"></path>
+            </g>
+          </svg>
         </div>
+        <span class="text-center font-medium text-sm sm:text-base"
+          >Cuisines sur mesure</span
+        >
       </div>
     </div>
   </div>
-  
-  
-  
-  <!-- Why Choose Us Section -->
-  <div class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
-          Pourquoi Nous Choisir
-        </h2>
-        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          10 Raisons de Faire Confiance à ALL DESIGN
+</div>
+
+<!-- Why Choose Us Section -->
+<div class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+        Pourquoi Nous Choisir
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        10 Raisons de Faire Confiance à ALL DESIGN
+      </p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <!-- Feature 1 -->
+      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+        <div class="flex justify-center">
+          <div
+            class="w-12 h-12 bg-accent rounded-full flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-primary"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <p class="mt-2 text-sm text-gray-600 text-center">
+          700+ projets réussis (dont des références comme Hôtel Mamounia
+          Marrakech et Villa Zineb à Casablanca).
         </p>
       </div>
-  
-      <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-        <!-- Feature 1 -->
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-          <div class="flex justify-center">
-            <div
-              class="w-12 h-12 bg-accent rounded-full flex items-center justify-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 text-primary"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                />
-              </svg>
-            </div>
-          </div>
-        
-          <p class="mt-2 text-sm text-gray-600 text-center">
-            700+ projets réussis (dont des références comme Hôtel Mamounia Marrakech et Villa Zineb à Casablanca).
-          </p>
-        </div>
-  
-        <!-- Feature 2 -->
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-          <div class="flex justify-center">
-            <div
-              class="w-12 h-12 bg-accent rounded-full flex items-center justify-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 text-primary"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                />
-              </svg>
-            </div>
-          </div>
-     
-          <p class="mt-2 text-sm text-gray-600 text-center">
-            Atelier de menuiserie intégré à Rabat pour une qualité contrôlée.
 
-          </p>
-        </div>
-  
-        <!-- Feature 3 -->
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-          <div class="flex justify-center">
-            <div
-              class="w-12 h-12 bg-accent rounded-full flex items-center justify-center"
+      <!-- Feature 2 -->
+      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+        <div class="flex justify-center">
+          <div
+            class="w-12 h-12 bg-accent rounded-full flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-primary"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 text-primary"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                />
-              </svg>
-            </div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              />
+            </svg>
           </div>
+        </div>
 
-          <p class="mt-2 text-sm text-gray-600 text-center">
-            Équipe pluridisciplinaire : Architectes, designers, artisans.
-          </p>
-        </div>
-  
-        <!-- Feature 4 -->
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-          <div class="flex justify-center">
-            <div
-              class="w-12 h-12 bg-accent rounded-full flex items-center justify-center"
+        <p class="mt-2 text-sm text-gray-600 text-center">
+          Atelier de menuiserie intégré à Rabat pour une qualité contrôlée.
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+        <div class="flex justify-center">
+          <div
+            class="w-12 h-12 bg-accent rounded-full flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-primary"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 text-primary"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
-                />
-              </svg>
-            </div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              />
+            </svg>
           </div>
-          <p class="mt-2 text-sm text-gray-600 text-center">
-            Délais respectés à 98% avec contrat de pénalités en cas de retard.
-          </p>
         </div>
+
+        <p class="mt-2 text-sm text-gray-600 text-center">
+          Équipe pluridisciplinaire : Architectes, designers, artisans.
+        </p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+        <div class="flex justify-center">
+          <div
+            class="w-12 h-12 bg-accent rounded-full flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-primary"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+          </div>
+        </div>
+        <p class="mt-2 text-sm text-gray-600 text-center">
+          Délais respectés à 98% avec contrat de pénalités en cas de retard.
+        </p>
       </div>
     </div>
   </div>
-
-
+</div>
 
 <!-- Hero Slider Section -->
 <div class="relative flex items-center justify-center w-full min-h-screen px-4">
   <!-- Image Container -->
-  <div class="w-full md:w-[80%] relative ">
-    <img src="/assets/pexels-cottonbro-5989947.jpg" 
-         class="hidden md:flex w-full md:h-[70%] rounded-3xl object-cover" 
-         alt="Nos Services" />
+  <div class="w-full md:w-[80%] relative">
+    <img
+      src="/assets/pexels-cottonbro-5989947.jpg"
+      class="hidden md:flex w-full md:h-[70%] rounded-3xl object-cover"
+      alt="Nos Services"
+    />
   </div>
 
   <!-- Overlay Content -->
   <div class="absolute inset-0 flex items-center justify-center">
-    <div class="text-center text-white max-w-4xl mx-auto p-6 md:p-10 bg-black/30 md:bg-transparent rounded-lg">
+    <div
+      class="text-center text-white max-w-4xl mx-auto p-6 md:p-10 bg-black/30 md:bg-transparent rounded-lg"
+    >
       <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
         Des Solutions Clé en Main, de la Conception à la Livraison
       </h1>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Service 1 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
-          <h3 class="text-lg md:text-xl font-semibold mb-2">Cuisines Haut de Gamme</h3>
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20"
+        >
+          <h3 class="text-lg md:text-xl font-semibold mb-2">
+            Cuisines Haut de Gamme
+          </h3>
           <p class="text-sm md:text-base">
-            Matériaux italiens, plans ergonomiques, intégration d'électroménager intelligent.
+            Matériaux italiens, plans ergonomiques, intégration d'électroménager
+            intelligent.
           </p>
         </div>
 
         <!-- Service 2 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
-          <h3 class="text-lg md:text-xl font-semibold mb-2">Aménagement Commercial</h3>
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20"
+        >
+          <h3 class="text-lg md:text-xl font-semibold mb-2">
+            Aménagement Commercial
+          </h3>
           <p class="text-sm md:text-base">
-            Optimisation des espaces de vente (magasins, showrooms, bureaux) pour maximiser le flux clients.
+            Optimisation des espaces de vente (magasins, showrooms, bureaux)
+            pour maximiser le flux clients.
           </p>
         </div>
 
         <!-- Service 3 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
-          <h3 class="text-lg md:text-xl font-semibold mb-2">Rénovation Complète</h3>
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20"
+        >
+          <h3 class="text-lg md:text-xl font-semibold mb-2">
+            Rénovation Complète
+          </h3>
           <p class="text-sm md:text-base">
-            De la démolition à la décoration finale, suivi de chantier transparent.
+            De la démolition à la décoration finale, suivi de chantier
+            transparent.
           </p>
         </div>
 
         <!-- Service 4 -->
-        <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
-          <h3 class="text-lg md:text-xl font-semibold mb-2">Design 3D Immersif</h3>
+        <div
+          class="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20"
+        >
+          <h3 class="text-lg md:text-xl font-semibold mb-2">
+            Design 3D Immersif
+          </h3>
           <p class="text-sm md:text-base">
-            Visualisez votre projet en réalité virtuelle avant même le premier coup de marteau.
+            Visualisez votre projet en réalité virtuelle avant même le premier
+            coup de marteau.
           </p>
         </div>
       </div>
@@ -399,15 +423,11 @@
   </div>
 </div>
 
-
-
 <!-- Stats Section -->
-<div class="py-16 bg-[#8E7E6A] text-white">
+<div class="py-16 bg-amber-700 text-white my-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
-      <h2 class="text-xl font-bold md:text-3xl">
-        ALL DESIGN en Chiffres
-      </h2>
+      <h2 class="text-xl font-bold md:text-3xl">ALL DESIGN en Chiffres</h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -432,9 +452,6 @@
   </div>
 </div>
 
-
-
-
 <!-- Final CTA Section -->
 <div class="py-16 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -443,13 +460,19 @@
         Prêt à Donner Vie à Votre Projet ?
       </h2>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-        Contactez-nous dès aujourd'hui pour une consultation gratuite et un accès à notre galerie 3D exclusive !
+        Contactez-nous dès aujourd'hui pour une consultation gratuite et un
+        accès à notre galerie 3D exclusive !
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <button routerLink="/devis"class="bg-[#8E7E6A] hover:bg-[#7A6D5C] text-white font-bold py-3 px-8 rounded-full transition duration-300">
+        <button
+          routerLink="/devis"
+          class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-3 px-8 rounded-full transition duration-300"
+        >
           Obtenez votre devis gratuit
         </button>
-        <button class="border-2 border-[#8E7E6A] text-[#8E7E6A] hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition duration-300">
+        <button
+          class="border-2 border-[#8E7E6A] text-[#8E7E6A] hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition duration-300"
+        >
           Voir nos réalisations
         </button>
       </div>
@@ -457,17 +480,41 @@
   </div>
 </div>
 
+<!-- FAQ -->
+<div class="max-w-4xl mx-auto mt-16 px-4 mb-16">
+  <!-- Titre FAQ -->
+  <div class="relative mb-12 flex flex-col items-center">
+    <h2 class="text-4xl font-bold tracking-tight">FAQ's</h2>
+    <div class="absolute -bottom-4 w-36 h-1 bg-amber-500"></div>
+  </div>
 
-
-
-
-
-
-
-
-
-  
-
-  
-  
-
+  <!-- Accordéon FAQ -->
+  <div class="space-y-6">
+    <div
+      *ngFor="let faq of faqs; let i = index"
+      class="border-b border-gray-200 pb-6"
+    >
+      <div class="flex items-start cursor-pointer" (click)="toggleFaq(i)">
+        <div class="flex-shrink-0 mr-4">
+          <!-- Icône dynamique -->
+          <div
+            class="flex items-center justify-center w-6 h-6 rounded-full bg-amber-500 text-white"
+          >
+            <span class="text-sm">{{ faq.isOpen ? "−" : "+" }}</span>
+          </div>
+        </div>
+        <div class="w-full">
+          <button class="w-full text-left text-lg font-medium text-gray-900">
+            {{ faq.question }}
+          </button>
+          <!-- Contenu affiché dynamiquement -->
+          <div *ngIf="faq.isOpen" class="mt-3 pl-2 border-l-2 border-amber-100">
+            <p class="text-gray-500 leading-relaxed">
+              {{ faq.answer }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
