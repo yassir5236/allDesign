@@ -43,4 +43,13 @@ export const routes: Routes = [
 
     data: { animation: 'demande' },
   },
+
+  {
+    path: 'portfolio',
+    pathMatch: 'full',
+    loadComponent: () =>
+      import('./portfolio/portfolio.component').then((m) => m.PortfolioComponent),
+
+    data: { animation: 'porfolio' },
+  }
 ];
