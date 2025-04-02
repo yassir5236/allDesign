@@ -40,41 +40,41 @@ export class HeroComponent {
 
   faqs = [
     {
-      question: 'How can I pay for my appointment?',
-      answer: 'Payment is required at the conclusion of your appointment. We accept cash, Visa, MasterCard and EFTPOS. If you have your private health insurance card you can claim your benefit on the spot using our HICAPS facility.',
-      isOpen: true
+        question: "Comment puis-je demander un devis pour mon projet ?",
+        answer: "Vous pouvez nous contacter par téléphone, e-mail ou via le formulaire sur notre site web. Nous organiserons une consultation gratuite pour évaluer vos besoins et vous fournir un devis détaillé.",
+        isOpen: true
     },
     {
-      question: 'What can I expect at my first consultation?',
-      answer: 'During your first consultation, we will discuss your health concerns, review your medical history, and conduct any necessary examinations. Our goal is to develop a personalized treatment plan tailored to your specific needs.',
-      isOpen: false
+        question: "Que dois-je attendre de notre première rencontre ?",
+        answer: "Lors de notre première rencontre, nous discuterons de vos idées, visiterons l’espace à aménager si possible, et définirons ensemble vos attentes. Nous vous proposerons ensuite des solutions adaptées à votre style et budget.",
+        isOpen: false
     },
     {
-      question: 'What are your opening hours?',
-      answer: 'We are open Monday to Friday from 8:00 AM to 6:00 PM, and Saturday from 9:00 AM to 2:00 PM. We are closed on Sundays and public holidays.',
-      isOpen: false
+        question: "Quels sont vos horaires d’ouverture ?",
+        answer: "Nous sommes disponibles du lundi au vendredi de 9h00 à 18h00, et le samedi de 10h00 à 14h00. Nous sommes fermés le dimanche et les jours fériés.",
+        isOpen: false
     },
     {
-      question: 'Do I need a referral?',
-      answer: 'No, you do not need a referral to book an appointment with us. However, if you have been referred by another healthcare provider, please bring any relevant documentation to your appointment.',
-      isOpen: false
+        question: "Fournissez-vous les matériaux pour les projets ?",
+        answer: "Oui, nous collaborons avec des fournisseurs de confiance pour vous proposer des matériaux de qualité. Vous pouvez également apporter vos propres matériaux si vous le souhaitez.",
+        isOpen: false
     },
     {
-      question: 'Is the cost of the appointment covered by private health insurance?',
-      answer: 'Many private health insurance plans cover our services, but coverage varies depending on your specific plan. We recommend contacting your insurance provider to confirm coverage before your appointment.',
-      isOpen: false
+        question: "Combien de temps prend un projet d’aménagement ?",
+        answer: "La durée dépend de l’ampleur du projet. Une simple peinture peut prendre quelques jours, tandis qu’une rénovation complète peut nécessiter plusieurs semaines. Nous vous donnerons une estimation précise après évaluation.",
+        isOpen: false
     },
     {
-      question: 'What is your cancellation policy?',
-      answer: 'We require 24 hours notice for cancellations. Late cancellations or missed appointments may incur a fee equivalent to 50% of the scheduled service.',
-      isOpen: false
+        question: "Quelle est votre politique d’annulation ?",
+        answer: "Nous demandons un préavis de 48 heures pour toute annulation. En cas d’annulation tardive, des frais équivalant à 30 % du devis initial peuvent être appliqués.",
+        isOpen: false
     },
     {
-      question: 'What are the parking and public transport options?',
-      answer: 'We have dedicated parking available on-site for clients. We are also conveniently located near public transport, with a bus stop directly outside our building and a train station within a 10-minute walk.',
-      isOpen: false
+        question: "Proposez-vous des services de suivi après projet ?",
+        answer: "Oui, nous offrons un suivi post-projet pour nous assurer de votre satisfaction. Nous restons disponibles pour toute retouche ou question après la fin des travaux.",
+        isOpen: false
     }
-  ];
+];
 
   toggleFaq(index: number) {
     this.faqs[index].isOpen = !this.faqs[index].isOpen;
