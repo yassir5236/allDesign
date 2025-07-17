@@ -16,6 +16,7 @@
             "outputPath": "dist/all-design",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "allowedCommonJsDependencies": ["leaflet"],
             "polyfills": [
               "zone.js"
             ],
@@ -42,7 +43,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "600kB",
                   "maximumError": "1MB"
                 },
                 {
